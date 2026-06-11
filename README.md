@@ -87,7 +87,7 @@ LTX-2.3 Universal i2v Enhanced Prompt Generator 是一个基于 Python 的图生
 ## 当前项目主要文件和文件夹说明
 
 根据当前已知文件，建议项目结构整理成这样：
-
+```text
 universal-i2v-enhanced-prompt-generator/
 │
 ├─ Universal_i2v_Enhanced_Prompt_v11_webui_auto5_checkbox_copy_guiweb_control_FIXED.py
