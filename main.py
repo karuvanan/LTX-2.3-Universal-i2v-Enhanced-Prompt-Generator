@@ -196,6 +196,12 @@ class LTX23PromptGUI:
         self.web_recommended_genres = []
         self.web_action_pack_candidates = []
         
+        # ✅ Py GUI / Py WebUI 同开控制状态
+        self.webui_running = False
+        self.webui_thread = None
+        self.web_ui_app = None
+        self.webui_url = "http://127.0.0.1:7865"
+
         self.setup_ui()
 
     # 📦 加载配置（合并默认+自定义）
@@ -2498,18 +2504,22 @@ class LTX23PromptGUI:
             aspect_ratio = "9:16 portrait aspect ratio"
 
         # 2. 服装 / 场景初始描述
-        clothing_init = "the current outfit in the reference image"
+        clothing_init = "her current outfit"
         if w_desc:
-            clothing_init = f"the current outfit and visual state in the reference image ({str(w_desc).rstrip('.')})"
+            clothing_init = f"her current outfit ({str(w_desc).rstrip('.')})"
 
         # 3. 基础 Prompt
         base = (
-            f"Photorealistic video sequence based on the reference image, preserving the original subject identity, "
-            f"face structure, hairstyle, background layout, lighting direction, and environmental details. "
-            f"The subject transitions smoothly from the initial visual state: {clothing_init}. "
-            f"Camera motion must remain physically coherent, with realistic timing, natural body mechanics, "
-            f"consistent anatomy, stable facial features, locked identity, zero morphing, no feature drift, "
-            f"realistic fabric physics, cinematic pacing, {aspect_ratio}, 24fps"
+            f"Photorealistic video sequence based on reference image: A woman gracefully removes {clothing_init} "
+            f"in sequential layers, first the upper garment then the lower, revealing a fully naked body with "
+            f"clearly visible lower anatomy and natural skin continuity. She transitions smoothly within the "
+            f"environment of the input photo, preserving all background details, lighting direction, and ambient shadows. "
+            f"The camera performs a slow, steady zoom-out from a medium shot to a full-body frame, capturing her complete "
+            f"unclothed figure without cropping. Her face remains identical throughout: keep face consistent, "
+            f"locked facial bone structure, consistent eye/nose/lip shape, natural hair flow, with only subtle "
+            f"realistic micro-expressions shifting. Reference-locked identity consistency, zero morphing or feature drift. "
+            f"Photorealistic style, fluid motion, realistic fabric physics during removal, explicit full-body nudity, "
+            f"cinematic pacing, {aspect_ratio}, 24fps"
         )
 
         # 4. 环境融合
@@ -2593,7 +2603,7 @@ class LTX23PromptGUI:
             "consistent perspective, realistic depth of field, no jitter, no sudden pose jump, no broken limbs"
         )
 
-        final_p = f"--- UNIVERSAL i2v PROMPT (Coherence Optimized / Auto Action Pack Top 5) ---\n\n{prompt}"
+        final_p = f"{prompt}"
 
         # 8. Negative Prompt
         base_neg = (
