@@ -8,6 +8,14 @@ LTX-2.3 Universal i2v Enhanced Prompt Generator 是一个基于 Python 的图生
 它可以根据参考图片进行场景分析，自动推荐 5 个最佳镜头流派，生成多套动作与镜头组合方案，并根据动作冲突与连贯性进行评分，最后输出适合 Universal i2v / LTX 类图生视频工作流使用的完整 Prompt。
 
 ---
+PY GUI
+https://github.com/user-attachments/assets/887c506d-40e9-4ea3-a5c9-cef530295bdd
+
+
+WEBUI
+https://github.com/user-attachments/assets/d7bce2a5-a024-411e-8c1d-1246fab320f0
+
+
 
 ## 当前项目功能可以整理成：
 
