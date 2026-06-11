@@ -209,7 +209,7 @@ pip install -r requirements.txt
 如果还没有，可以先手动安装：
 
 pip install gradio Pillow transformers torch huggingface_hub opencv-python numpy
-Step 6：运行项目
+## Step 6：运行项目
 py "main.py"
 
 ## 运行后应该可以同时使用：
