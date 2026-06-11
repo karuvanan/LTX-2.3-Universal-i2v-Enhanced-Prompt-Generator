@@ -210,7 +210,7 @@ pip install -r requirements.txt
 
 pip install gradio Pillow transformers torch huggingface_hub opencv-python numpy
 Step 6：运行项目
-py "Universal_i2v_Enhanced_Prompt_v11_webui_auto5_checkbox_copy_guiweb_control_FIXED.py"
+py "main.py"
 
 ## 运行后应该可以同时使用：
 
