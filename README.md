@@ -154,3 +154,55 @@ universal-i2v-enhanced-prompt-generator/
 │
 └─ screenshots/
    Optional safe screenshots for README.
+```
+
+## 安装步骤 step by step
+Step 1：安装 Python
+
+到 Python 官网安装 Python 3.10 或 3.11。
+
+## 安装时必须勾选：
+
+Add Python to PATH
+
+## 检查：
+
+py --version
+Step 2：安装 Git for Windows
+
+## 安装后检查：
+
+git --version
+Step 3：打开项目文件夹
+
+## 例如你的项目在：
+
+D:\comfui ui and sulphur
+
+## 在 VS Code 打开这个文件夹。
+
+或者 CMD：
+
+cd /d "D:\comfui ui and sulphur"
+Step 4：创建虚拟环境
+py -m venv .venv
+
+## 启用虚拟环境：
+
+.venv\Scripts\activate
+Step 5：安装依赖
+
+如果已有 requirements.txt：
+
+pip install -r requirements.txt
+
+如果还没有，可以先手动安装：
+
+pip install gradio Pillow transformers torch huggingface_hub opencv-python numpy
+Step 6：运行项目
+py "Universal_i2v_Enhanced_Prompt_v11_webui_auto5_checkbox_copy_guiweb_control_FIXED.py"
+
+## 运行后应该可以同时使用：
+
+Py GUI 桌面窗口
+Gradio WebUI 浏览器页面
