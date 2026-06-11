@@ -9,10 +9,12 @@ LTX-2.3 Universal i2v Enhanced Prompt Generator 是一个基于 Python 的图生
 
 ---
 PY GUI
+
 https://github.com/user-attachments/assets/887c506d-40e9-4ea3-a5c9-cef530295bdd
 
 
 WEBUI
+
 https://github.com/user-attachments/assets/d7bce2a5-a024-411e-8c1d-1246fab320f0
 
 
